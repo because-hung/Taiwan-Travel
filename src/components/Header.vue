@@ -17,7 +17,7 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import logo from "../components/icon/logoSvg.vue"
 import heart from "../components/icon/heartSvg.vue"
 import QA from "../components/icon/QASvg.vue"
@@ -29,7 +29,7 @@ export default {
   },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .container {
   display: grid;
   align-items: center;

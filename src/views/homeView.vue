@@ -2,15 +2,18 @@
   <div>
     <Header />
     <Swiper />
+    <Explore />
   </div>
 </template>
 <script lang="ts">
 import Header from '../components/Header.vue'
 import Swiper from '../components/Swiper.vue'
+import Explore from '../components/Explore.vue'
 export default {
   components: {
     Header,
-    Swiper
+    Swiper,
+    Explore
   },
   setup() {
     return {}
