@@ -81,6 +81,7 @@ export default {
       height: 300px;
       background-size: 230px 300px;
       background-repeat: no-repeat;
+      background-position: center;
     }
     .imgBox2:nth-of-type(#{$i}) {
       background-image: url(#{$assetsPath}/explore_0#{$i+4}.jpeg);
@@ -88,6 +89,7 @@ export default {
       height: 300px;
       background-size: 230px 300px;
       background-repeat: no-repeat;
+      background-position: center;
     }
   }
   .imgBox,
@@ -95,6 +97,7 @@ export default {
     margin-right: 2vw;
     position: relative;
     cursor: pointer;
+    transition: .5s;
     &:hover {
       background-size: 300px 360px;
     }

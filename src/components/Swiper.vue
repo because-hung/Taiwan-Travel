@@ -42,10 +42,8 @@
 </template>
 <script>
 // import Swiper core and required modules
-
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue"
-
 // Import Swiper styles
 import "swiper/css"
 import "swiper/css/effect-fade"
@@ -54,7 +52,6 @@ import "swiper/css/pagination"
 import { EffectFade, Autoplay, Navigation, Pagination } from "swiper"
 import { ref } from "vue"
 import search from "../components/icon/searchSvg.vue"
-
 export default {
   components: {
     Swiper,
