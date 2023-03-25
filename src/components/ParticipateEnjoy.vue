@@ -16,6 +16,33 @@
         </ul>
       </div>
     </div>
+    <div class="m_participate">
+      <div class="txt">
+        <div class="title">
+          <h2>Participate</h2>
+          <h2>參與四季的更迭</h2>
+        </div>
+        <h5>根據季節的熱門活動主題，邀請你一同享受旅行中的每一個時刻。</h5>
+      </div>
+      <div class="pic">
+        <div class="pic-item">
+          <h2>精彩藝術知性之旅</h2>
+          <img src="../assets/participate/participate_1.png" alt="" />
+        </div>
+        <div class="pic-item">
+          <h2>好廟好妙求神問卜</h2>
+          <img src="../assets/participate/participate_2.png" alt="" />
+        </div>
+        <div class="pic-item">
+          <h2>親自踏上山海之旅</h2>
+          <img src="../assets/participate/participate_3.png" alt="" />
+        </div>
+        <div class="pic-item">
+          <h2>體驗台灣文化慶典</h2>
+          <img src="../assets/participate/participate_4.png" alt="" />
+        </div>
+      </div>
+    </div>
     <div class="enjoy">
       <div class="txt">
         <div class="slogan">
@@ -26,7 +53,7 @@
           <p>
             充斥在台灣大街小巷的在地美食，融合當地生活與文化特色，發展出各式各樣風味，從銅板小吃到精緻料理，數不清的美味讓你飽餐一頓。
           </p>
-          <button>享受更多美食</button>
+          <button class="btn">享受更多美食</button>
         </div>
       </div>
       <div class="pic">
@@ -110,7 +137,22 @@
           </swiper>
         </div>
       </div>
+      <button class="btn m_btn">享受更多美食</button>
     </div>
+    <div class="subscribe">
+      <div class="container">
+        <div class="pic">
+          <img src="../assets/subscribe/Subscribe.jpeg" alt="" />
+        </div>
+        <div class="txt">
+          <h2>Subscribe</h2>
+          <h3>每個月來一場自在旅行</h3>
+          <h5>如果您願意收到每月旅遊資訊，一起感受台灣旅行的美好</h5>
+          <p class="txtBox">youremail@example.com <send /></p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 <script lang="ts">
@@ -119,10 +161,12 @@ import { Swiper, SwiperSlide } from "swiper/vue"
 import "swiper/css"
 import "swiper/css/pagination"
 import { computed, ref } from "vue"
+import send from "../components/icon/sendMail.vue"
 export default {
   components: {
     Swiper,
     SwiperSlide,
+    send,
   },
   setup() {
     const showPic = ref(1)
@@ -155,14 +199,15 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import "../sass/pxToVw.scss";
 .participate {
-  margin-top: 100px;
+  margin-top: pxToVw(100);
   display: flex;
   align-items: center;
   .pic {
-    width: 1000px;
-    height: 466px;
-    margin-right: 80px;
+    width: pxToVw(1000);
+    height: pxToVw(466);
+    margin-right: pxToVw(80);
     img {
       width: 100%;
       height: 100%;
@@ -171,40 +216,40 @@ export default {
   }
   .txt {
     h2 {
-      font-size: 48px;
+      font-size: pxToVw(48);
     }
     h2:first-of-type {
       color: #769763;
-      margin-top: 20px;
+      margin-top: pxToVw(20);
     }
     h2:last-of-type {
       color: #737373;
     }
     h5 {
-      font-size: 18px;
+      font-size: pxToVw(18);
     }
     ul {
-      padding-left: 20px;
+      padding-left: pxToVw(20);
     }
     li {
       position: relative;
-      font-size: 18px;
-      padding: 16px 8px;
+      font-size: pxToVw(18);
+      padding: pxToVw(16) pxToVw(8);
       color: #737373;
-      letter-spacing: 1.5px;
+      letter-spacing: pxToVw(1.5);
       list-style-type: none;
       cursor: pointer;
-      width: 160px;
+      width: pxToVw(160);
     }
     li::before {
       content: "";
       position: absolute;
-      height: 8px;
-      width: 8px;
+      height: pxToVw(8);
+      width: pxToVw(8);
       background-color: #f1d675;
       border-radius: 50%;
       top: 50%;
-      left: -20px;
+      left: pxToVw(-20);
       transform: translate(50%, -50%);
     }
     li:hover {
@@ -212,53 +257,58 @@ export default {
     }
   }
 }
-
+.m_participate {
+  display: none;
+}
 .enjoy {
-  margin-top: 100px;
+  margin-top: pxToVw(100);
   .txt {
     display: flex;
     justify-content: center;
     align-items: center;
     .slogan {
       h2 {
-        font-size: 48px;
+        font-size: pxToVw(48);
       }
       h2:first-of-type {
         color: #769763;
-        margin-top: 20px;
+        margin-top: pxToVw(20);
       }
       h2:last-of-type {
         color: #737373;
       }
     }
     .title {
-      margin-left: 80px;
+      margin-left: pxToVw(80);
       color: #737373;
       font-weight: 400;
-      font-size: 18px;
+      font-size: pxToVw(18);
       display: flex;
       flex-direction: column;
       p {
-        width: 528px;
-        height: 46px;
+        width: pxToVw(528);
         line-height: 1.7;
-      }
-      button {
-        align-self: flex-end;
-        margin-top: 20px;
-        background: white;
-        border-radius: 20px;
-        padding: 5px 20px;
-        color: #737373;
-        border: #737373 1px solid;
-        cursor: pointer
+        margin: 0;
       }
     }
+  }
+  button,
+  .m_btn {
+    align-self: flex-end;
+    background: white;
+    border-radius: pxToVw(20);
+    padding: pxToVw(5) pxToVw(20);
+    color: #737373;
+    border: #737373 1px solid;
+    cursor: pointer;
+  }
+  .m_btn {
+    display: none;
   }
 }
 
 .swiper-slide {
-  margin-top: 20px;
+  margin-top: pxToVw(20);
   position: relative;
   .info {
     margin: 0;
@@ -277,7 +327,7 @@ export default {
     text-align: center;
     width: 75%;
     height: 100%;
-    padding: 0 20px;
+    padding: 0 pxToVw(20);
     box-sizing: border-box;
   }
   &:hover .info {
@@ -286,12 +336,133 @@ export default {
 }
 .swiper-slide img {
   width: 75%;
-  height: 500px;
+  height: pxToVw(500);
   cursor: pointer;
   vertical-align: middle;
 }
 
 .swiperCom {
   position: relative;
+}
+
+.subscribe {
+  margin-top: pxToVw(140);
+  background-color: #769763;
+  padding: pxToVw(144) pxToVw(200);
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .pic {
+    width: pxToVw(600);
+    height: pxToVw(300);
+    img {
+      width: 100%;
+      height: 100%;
+      vertical-align: middle;
+    }
+  }
+  .txt {
+    width: 400px;
+    margin-left: pxToVw(40);
+    h2 {
+      color: #f1d675;
+      font-size: pxToVw(48);
+      margin: 0;
+    }
+    h3 {
+      color: #fff;
+      font-size: pxToVw(36);
+      margin: pxToVw(15) 0;
+      letter-spacing: pxToVw(2);
+    }
+    h5 {
+      font-size: pxToVw(18);
+      color: rgba(255, 255, 255, 0.5);
+      margin: 0;
+      letter-spacing: pxToVw(1.5);
+      line-height: 1.5;
+    }
+    .txtBox {
+      padding: pxToVw(20) pxToVw(15);
+      color: rgba(255, 255, 255, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      letter-spacing: pxToVw(1.5);
+    }
+  }
+}
+
+@media (max-width: 821px) {
+  .participate {
+    display: none;
+  }
+  .m_participate {
+    margin-top: 80px;
+    display: block;
+    .title {
+      display: flex;
+      align-items: center;
+      h2 {
+        margin: 0;
+        color: #769763;
+      }
+      h2:last-child {
+        margin-left: 20px;
+        color: #737373;
+      }
+    }
+    h5 {
+      color: #737373;
+    }
+    .pic {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 12px;
+      box-sizing: border-box;
+      .pic-item {
+        position: relative;
+        width: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+        }
+        h2 {
+          position: absolute;
+          margin: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0; // 沒有寬高 自然拉伸填滿父元素
+          background-color: rgba(0, 0, 0, 0.2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+  }
+  .enjoy {
+    .txt {
+      justify-content: space-evenly;
+      margin-bottom: 20px;
+    }
+    button {
+      display: none;
+    }
+    .m_btn {
+      display: flex;
+      margin: auto;
+      margin-top: 25px; 
+      padding: 10px 25px;
+    }
+  }
 }
 </style>

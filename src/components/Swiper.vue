@@ -75,9 +75,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import "../sass/pxToVw.scss";
 .swiper-slide img {
   width: 100%;
-  height: 800px;
+  height: pxToVw(800);
 }
 .swiper-pagination-bullet {
   width: 20px;
@@ -98,8 +99,8 @@ export default {
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
-  padding: 8px 16px;
-  width: 512px;
+  padding: pxToVw(10) pxToVw(20);
+  width: pxToVw(512);
   input{
     width: 100%;
     border: none;

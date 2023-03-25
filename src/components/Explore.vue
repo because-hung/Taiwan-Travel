@@ -65,6 +65,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import '../sass/pxToVw.scss';
 .explore {
   margin-left: 200px;
 }
@@ -72,102 +73,102 @@ export default {
 .img-intro,
 .img-intro2 {
   display: flex;
-  margin-right: 2%;
   $assetsPath: "../assets/explore";
   @for $i from 1 through 5 {
     .imgBox:nth-of-type(#{$i}) {
       background-image: url(#{$assetsPath}/explore_0#{$i}.jpeg);
-      width: 230px;
-      height: 300px;
-      background-size: 230px 300px;
+      width: pxToVw(230);
+      height: pxToVw(300);
+      background-size: pxToVw(230) pxToVw(300);
       background-repeat: no-repeat;
       background-position: center;
     }
     .imgBox2:nth-of-type(#{$i}) {
       background-image: url(#{$assetsPath}/explore_0#{$i+4}.jpeg);
-      width: 230px;
-      height: 300px;
-      background-size: 230px 300px;
+      width: pxToVw(230);
+      height: pxToVw(300);
+      background-size: pxToVw(230) pxToVw(300);
       background-repeat: no-repeat;
       background-position: center;
     }
   }
   .imgBox,
   .imgBox2 {
-    margin-right: 2vw;
+    margin-right: pxToVw(40);
     position: relative;
     cursor: pointer;
     transition: .5s;
     &:hover {
-      background-size: 300px 360px;
+      background-size: pxToVw(300) pxToVw(360);
     }
   }
   .imgBox::after,
   .imgBox2::after {
     content: attr(data-view);
     position: absolute;
-    right: -22px;
+    right: pxToVw(-25);
     color: #737373;
-    width: 18px;
+    width: pxToVw(18);
+    font-size: pxToVw(16);
   }
   h4 {
-    width: 18px;
-    margin: 0px;
-    margin-left: 4px;
+    width: pxToVw(18);
+    margin: pxToVw(0);
+    margin-left: pxToVw(4);
     color: #737373;
   }
 }
 .section {
-  margin-top: 144px;
+  margin-top: pxToVw(144);
   display: flex;
   justify-content: space-between;
   .info {
     width: 30%;
-    margin-right: 36px;
+    margin-right: pxToVw(36);
     .slogan {
       color: #769763;
       font-weight: 600;
-      font-size: 48px;
+      font-size: pxToVw(48);
     }
     .title {
       font-weight: 400;
-      font-size: 48px;
+      font-size: pxToVw(48);
       color: #737373;
-      margin: 20px 0px;
+      margin: pxToVw(20) pxToVw(0);
     }
     p {
-      font-size: 18px;
-      line-height: 26px;
+      font-size: pxToVw(18);
+      line-height: 1.4;
       letter-spacing: 0.15em;
       text-align: justify;
     }
   }
 }
 .section2 {
-  margin-top: 24px;
+  margin-top: pxToVw(40);
   display: flex;
   ul {
-    margin-right: 75px;
-    padding-left: 20px;
+    margin-right: pxToVw(75);
+    padding-left: pxToVw(20);
     li {
       position: relative;
       list-style-type: none;
-      margin-bottom: 32px;
+      margin-bottom: pxToVw(32);
       letter-spacing: 0.15em;
       font-weight: 400;
-      font-size: 18px;
-      line-height: 26px;
+      font-size: pxToVw(18);
+      line-height: pxToVw(26);
       cursor: pointer;
     }
     li::before {
       content: "";
       position: absolute;
-      height: 8px;
-      width: 8px;
+      height: pxToVw(8);
+      width: pxToVw(8);
       background-color: #f1d675;
       border-radius: 50%;
       top: 40%;
-      left: -25px;
+      left: -pxToVw(25);
       transform: translate(50%, -50%);
     }
     li:hover {
@@ -178,11 +179,24 @@ export default {
     display: flex;
     margin-right: 2%;
     h4 {
-      width: 18px;
-      margin: 0px;
-      margin-left: 4px;
+      width: pxToVw(18);
+      margin: pxToVw(0);
+      margin-left: pxToVw(4);
       color: #737373;
     }
+  }
+}
+
+@media (max-width: 821px) {
+  .explore{
+    margin-left: 0;
+  }
+  .img-intro,
+.img-intro2{
+  .imgBox,
+  .imgBox2 {
+    margin-right: pxToVw(60);
+  }
   }
 }
 </style>

@@ -4,8 +4,7 @@
     <ul class="topMenu">
       <li>
         找景點 <span>attraction</span>
-        <ul class="sub-item">
-        </ul>
+        <ul class="sub-item"></ul>
       </li>
       <li>找美食 <span>delicacy</span></li>
       <li>找活動 <span>activity</span></li>
@@ -15,6 +14,7 @@
       <div class="btn-heart"><heart /></div>
       <div class="btn-QA"><QA /></div>
     </div>
+    <div class="mobileMenu">☰</div>
   </div>
 </template>
 <script lang="ts">
@@ -30,6 +30,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import "../sass/pxToVw.scss";
 .container {
   display: grid;
   align-items: center;
@@ -44,18 +45,18 @@ export default {
   li {
     color: #737373;
     list-style: none;
-    margin: 0px 24px;
+    margin: pxToVw(0) pxToVw(24);
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: pxToVw(10);
     letter-spacing: 0.2em;
     position: relative;
     font-weight: 400;
     cursor: pointer;
     span {
       text-transform: uppercase;
-      margin-top: 5px;
+      margin-top: pxToVw(5);
       display: block;
-      font-size: 10px;
+      font-size: pxToVw(10);
       letter-spacing: 0.05em;
     }
     .sub-items {
@@ -65,10 +66,10 @@ export default {
   li:hover {
     &::before {
       content: "";
-      width: 15px;
-      height: 15px;
+      width: pxToVw(15);
+      height: pxToVw(15);
       position: absolute;
-      top: -35px;
+      top: pxToVw(-35);
       left: 48%;
       transform: translateX(-50%);
       border-radius: 50%;
@@ -84,7 +85,27 @@ export default {
   grid-column: 6 / 8;
   display: flex;
   .btn-heart {
-    margin-right: 17px;
+    margin-right: pxToVw(17);
+  }
+}
+.mobileMenu {
+   display: none;
+  }
+@media (max-width: 821px) {
+  .topMenu,
+  .btn-group {
+    display: none;
+  }
+  .logo {
+    grid-column: 1 / 4;
+  }
+  .mobileMenu {
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 40px;
+    font-size: 36px;
+    color: #769763;
   }
 }
 </style>
