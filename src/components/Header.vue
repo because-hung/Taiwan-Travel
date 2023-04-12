@@ -43,8 +43,8 @@ export default {
     search,
   },
   setup() {
-    const showMenu = ref(false)
-    function toggleMenu() {
+    const showMenu = ref<boolean>(false)
+    function toggleMenu(): void {
       showMenu.value = !showMenu.value
     }
     return {
