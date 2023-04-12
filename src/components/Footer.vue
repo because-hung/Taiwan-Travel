@@ -6,10 +6,16 @@
 <script>
 export default {}
 </script>
-<style>
+<style scoped>
 .container {
   color: #acacac;
   padding: 10px 0;
   text-align: center;
+}
+@media (max-width: 415px) {
+  .container{
+    font-size: 13px;
+    text-align: left;
+  }
 }
 </style>

@@ -29,5 +29,11 @@ export default {
 <style lang="scss">
 *{
   box-sizing: border-box;
-}</style>
+  // overflow-x: hidden; // 超出隱藏
+}
+html, body{
+  overflow-x: hidden; // 超出隱藏
+}
+
+</style>
  

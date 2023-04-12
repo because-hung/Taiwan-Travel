@@ -118,4 +118,9 @@ export default {
     cursor: pointer;
   }
 }
+@media (max-width: 415px){
+  .search-group{
+    width: 50%;
+  }
+}
 </style>

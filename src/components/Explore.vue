@@ -39,15 +39,15 @@ export default {
   setup() {
     let imgData: string[] = [
       "台東金剛大道",
-      "南投日月潭文武廟",
+      "日月潭文武廟",
       "台北寧夏夜市",
       "南投合歡山",
     ]
     let imgData2: string[] = [
       "北投圖書館",
-      "樹林三角埔頂山步道",
+      "樹林頂山步道",
       "水里車埕車站",
-      "台中科博館植物園",
+      "台中植物園",
       "台南孔廟",
     ]
     let cityData: string[] = [
@@ -55,7 +55,7 @@ export default {
       "休閒樂活：中台灣",
       "人情小吃：南台灣",
       "自然生態：東台灣",
-      "小島風情：離島地區",
+      "小島風情：離島",
     ]
     // function getImageUrl(name: string) { // require img 的方式
     //   return new URL(`../assets/explore/${name}.jpeg`, import.meta.url).href
@@ -65,9 +65,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import '../sass/pxToVw.scss';
+@import "../sass/pxToVw.scss";
 .explore {
-  margin-left: 200px;
+  margin-left: pxToVw(140);
 }
 
 .img-intro,
@@ -97,7 +97,7 @@ export default {
     margin-right: pxToVw(40);
     position: relative;
     cursor: pointer;
-    transition: .5s;
+    transition: 0.5s;
     &:hover {
       background-size: pxToVw(300) pxToVw(360);
     }
@@ -148,7 +148,6 @@ export default {
   margin-top: pxToVw(40);
   display: flex;
   ul {
-    margin-right: pxToVw(75);
     padding-left: pxToVw(20);
     li {
       position: relative;
@@ -168,7 +167,7 @@ export default {
       background-color: #f1d675;
       border-radius: 50%;
       top: 40%;
-      left: -pxToVw(25);
+      left: pxToVw(-25);
       transform: translate(50%, -50%);
     }
     li:hover {
@@ -178,6 +177,7 @@ export default {
   .img-intro2 {
     display: flex;
     margin-right: 2%;
+    margin-left: pxToVw(80);
     h4 {
       width: pxToVw(18);
       margin: pxToVw(0);
@@ -188,15 +188,31 @@ export default {
 }
 
 @media (max-width: 821px) {
-  .explore{
+  .explore {
     margin-left: 0;
   }
   .img-intro,
-.img-intro2{
-  .imgBox,
-  .imgBox2 {
-    margin-right: pxToVw(60);
+  .img-intro2 {
+    .imgBox,
+    .imgBox2 {
+      margin-right: pxToVw(60);
+    }
   }
+}
+
+@media (max-width: 415px) {
+  .section{
+    margin-bottom: 50px;
+    .info{
+      p{
+      display: none;
+      }
+    }
+  }
+  .section2{
+    ul{
+      display: none;
+    }
   }
 }
 </style>

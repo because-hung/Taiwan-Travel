@@ -152,7 +152,21 @@
         </div>
       </div>
     </div>
-
+    <div class="m_subscribe">
+      <div class="container">
+        <div class="txt">
+          <h2>Subscribe</h2>
+          <h3>每個月來一場自在旅行</h3>
+        </div>
+        <div class="pic">
+          <img src="../assets/subscribe/Subscribe.jpeg" alt="" />
+        </div>
+      </div>
+      <div class="bot">
+        <h5>如果您願意收到每月旅遊資訊，一起感受台灣旅行的美好</h5>
+        <p class="txtBox">youremail@example.com <send /></p>
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -239,7 +253,6 @@ export default {
       letter-spacing: pxToVw(1.5);
       list-style-type: none;
       cursor: pointer;
-      width: pxToVw(160);
     }
     li::before {
       content: "";
@@ -297,7 +310,7 @@ export default {
     align-self: flex-end;
     background: white;
     border-radius: pxToVw(20);
-    padding: pxToVw(5) pxToVw(20);
+    padding: pxToVw(5) pxToVw(15);
     color: #737373;
     border: #737373 1px solid;
     cursor: pointer;
@@ -345,7 +358,8 @@ export default {
   position: relative;
 }
 
-.subscribe {
+.subscribe,
+.m_subscribe {
   margin-top: pxToVw(140);
   background-color: #769763;
   padding: pxToVw(144) pxToVw(200);
@@ -385,7 +399,7 @@ export default {
       line-height: 1.5;
     }
     .txtBox {
-      padding: pxToVw(20) pxToVw(15);
+      padding: 10px 15px;
       color: rgba(255, 255, 255, 0.5);
       display: flex;
       align-items: center;
@@ -394,6 +408,10 @@ export default {
       letter-spacing: pxToVw(1.5);
     }
   }
+}
+
+.m_subscribe {
+  display: none;
 }
 
 @media (max-width: 821px) {
@@ -460,8 +478,81 @@ export default {
     .m_btn {
       display: flex;
       margin: auto;
-      margin-top: 25px; 
+      margin-top: 25px;
       padding: 10px 25px;
+    }
+  }
+  .swiper-slide img {
+    width: 90%;
+    height: pxToVw(450);
+  }
+  .swiper-slide{
+    .info{
+      width: 90%;
+      p{
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 415px) {
+  .enjoy {
+    .title {
+      p {
+        display: none;
+      }
+    }
+  }
+  .m_participate {
+    h2 {
+      font-size: 20px;
+    }
+  }
+  .swiper-slide img {
+    width: 100%;
+  }
+    .swiper-slide{
+    .info{
+      width: 100%;
+      h2{
+        font-size: 14px;
+      }
+
+    }
+  }
+  .subscribe {
+    display: none;
+  }
+  .m_subscribe {
+    display: block;
+    .container {
+      .pic {
+        width: 100%;
+      }
+      .txt {
+        width: 400px;
+        margin-left: pxToVw(40);
+      }
+    }
+    .bot {
+      margin-top: 10px;
+      h5 {
+        font-size: pxToVw(16);
+        color: rgba(255, 255, 255, 0.5);
+        margin: 0;
+        letter-spacing: pxToVw(1.5);
+        line-height: 1.5;
+      }
+      .txtBox {
+        padding: 10px 15px;
+        color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        letter-spacing: pxToVw(1.5);
+      }
     }
   }
 }
