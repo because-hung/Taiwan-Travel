@@ -10,7 +10,7 @@
       <li>找活動 <span>activity</span></li>
       <li>探索更多 <span>more</span></li>
     </ul>
-    <div class="hamMenu" :class="{ openMenu: showMenu, closeMenu: !showMenu }">
+    <div class="hamMenu" :class="{ closeMenu: showMenu, openMenu: !showMenu }">
       <ul>
         <div class="search-group">
           <search class="searchIcon" />
@@ -43,7 +43,7 @@ export default {
     search,
   },
   setup() {
-    const showMenu = ref<boolean>(false)
+    const showMenu = ref<boolean>(true)
     function toggleMenu(): void {
       showMenu.value = !showMenu.value
     }
@@ -144,10 +144,12 @@ export default {
     left: 0;
     right: 0;
     z-index: 99;
-    transition: all 0.5s;
+    transition: all .5s;
     ul {
       position: relative;
-      top: 20%;
+      top: 10%;
+      margin: 0;
+      z-index: 99;
     }
     li {
       margin: 32px 0px;
@@ -183,12 +185,12 @@ export default {
     }
   }
   .openMenu {
-    // left: 100vw;
+    // left: 0;
      transform: translate(0);
   }
   .closeMenu {
-    // left: 0;
-    transform: translate(100%);
+    // left: 100%;
+     transform: translate(100%);
   }
 }
 </style>

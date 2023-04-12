@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrap">
     <Header />
     <Swiper />
     <Explore />
@@ -29,11 +29,10 @@ export default {
 <style lang="scss">
 *{
   box-sizing: border-box;
-  // overflow-x: hidden; // 超出隱藏
 }
-html, body{
-  overflow-x: hidden; // 超出隱藏
+.wrap{
+  position: relative;
+  overflow-x: hidden;
 }
-
 </style>
  

@@ -9,6 +9,7 @@ import home from './views/homeView.vue'
 </template>
 
 <style scoped>
+
 /* .logo {
   height: 6em;
   padding: 1.5em;
